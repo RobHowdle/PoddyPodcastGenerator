@@ -2,17 +2,17 @@
 
 namespace Database\Factories;
 
-use App\Models\Chapter;
+use App\Models\Profile;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class ChapterFactory extends Factory
+class ProfileFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = Chapter::class;
+    protected $model = Profile::class;
 
     /**
      * Define the model's default state.
@@ -23,10 +23,7 @@ class ChapterFactory extends Factory
     {
         return [
             'user_id' => $this->faker->unique()->numberBetween($min = 1, $max = 10),
-            'chapter_name' => $this->faker->unique()->word . ' Chapter',
-            'chapter_description' => $this->faker->sentence,
-            'chapter_image' => 'https://via.placeholder.com/300',
-            'chapter_creation' => $this->faker->dateTime,
+            'bio' => $this->faker->text($maxNbChars = 150),
             'created_at' => now(),
             'updated_at' => now(),
         ];

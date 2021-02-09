@@ -26,7 +26,7 @@ class EpisodeFactory extends Factory
         $user = User::factory();    
          
         return [
-            'chapter_id' => 1,
+            'chapter_id' => $this->faker->numberBetween($min = 1, $max = 4),
             'episode_title' => $this->faker->text($maxNbChars = 12),
             'episode_short_description' => $this->faker->sentence(),
             'episode_long_description' => $this->faker->text($maxNbChars = 150),
