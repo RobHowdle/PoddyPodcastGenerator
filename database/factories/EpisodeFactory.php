@@ -23,7 +23,7 @@ class EpisodeFactory extends Factory
 
     public function definition()
     {   
-        $user = User::factory();    
+        $user = User::factory();
          
         return [
             'chapter_id' => $this->faker->numberBetween($min = 1, $max = 4),
